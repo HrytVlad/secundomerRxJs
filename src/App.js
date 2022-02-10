@@ -13,7 +13,7 @@ function App() {
   const [sec, setSec] = useState(0);
   const [onClickBtn, setonClickBtn] = useState(false);
   const [startStopTgle, setStartStopTgle] = useState();
-
+  const [wtTime, setWtTime] = useState(0)
   const handleClick = () => {
     if (!onClickBtn) {
       setonClickBtn(!onClickBtn)
@@ -25,7 +25,9 @@ function App() {
   };
 
   const handleWait = () => {
+    setTimeout(() => setWtTime(0), 300)
     if (sec !== 0) {
+      setWtTime(wtTime + 1)
       setonClickBtn(false);
     }
   };
